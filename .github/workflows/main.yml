@@ -24,3 +24,11 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
+      
+    - name: Build and Push Docker Image
+      uses: tejasdp02/actions@v1
+      with:
+        image: tejasdp02/demo-actions
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
